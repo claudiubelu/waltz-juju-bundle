@@ -59,7 +59,7 @@ jobs:
             # Get the last revision number and image revision number and release.
             charm_rev=$(charmcraft revisions finos-waltz-k8s | awk 'FNR == 2 {print $1}')
             img_rev=$(charmcraft resource-revisions finos-waltz-k8s waltz-image | awk 'FNR == 2 {print $1}')
-            charmcraft release finos-waltz-k8s --revision=${charm_rev} --channel="${release_short}/edge" --resource="waltz-image:${img_rev}"
+            charmcraft release finos-waltz-k8s --revision=${charm_rev} --channel="${short_version}/edge" --resource="waltz-image:${img_rev}"
 
             # Also release it as the latest.
             charmcraft release finos-waltz-k8s --revision=${charm_rev} --channel=edge --resource="waltz-image:${img_rev}"
