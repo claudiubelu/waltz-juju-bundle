@@ -79,4 +79,9 @@ jobs:
             fi
 
             release_charm_with_image "${img_version}"
+
+            # Dispatch the create_release.yaml workflow, which will create the release branch,
+            # create a commit that will make bundle.yaml point towards this release, and publish
+            # the bundle into Charmhub.
+            gh workflow run create_release.yaml -f release="${img_version}"
           done
