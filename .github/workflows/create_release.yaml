@@ -36,7 +36,7 @@ jobs:
           # and apply it over the bundle.yaml file.
           echo "applications:" > overlay.yaml
           echo "  finos-waltz:" >> overlay.yaml
-          echo "    channel: ${{ steps.release-short.outputs.short_version }}" }}/edge" >> overlay.yaml
+          echo "    channel: ${{ steps.release-short.outputs.short_version }}/edge" >> overlay.yaml
 
           # We can't have bundle.yaml as both the source and destionation, the result will not be
           # as we would have wanted it.
